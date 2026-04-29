@@ -42,3 +42,22 @@ document.querySelectorAll('.main-nav a').forEach(link => {
     link.classList.add('active');
   }
 });
+
+// Back-to-top button
+const backToTop = document.querySelector('.back-to-top');
+
+if (backToTop) {
+  const toggleBackToTop = () => {
+    if (window.scrollY > 280) {
+      backToTop.classList.add('show');
+      return;
+    }
+    backToTop.classList.remove('show');
+  };
+
+  window.addEventListener('scroll', toggleBackToTop);
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}

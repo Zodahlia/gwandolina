@@ -7,6 +7,8 @@ Statische Website fur Gwandolina (de-AT), umgesetzt mit reinem HTML, CSS und Jav
 ```
 gwandolina/
 |- index.html
+|- secondhand.html
+|- ueber-uns.html
 |- boutique.html
 |- kleidersammlung.html
 |- jobs.html
