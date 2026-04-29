@@ -1,0 +1,533 @@
+/* ===================================================
+   Gwandolina – style.css
+   Mobilfirst, CSS custom properties, ingen rammeverk
+   =================================================== */
+
+/* ---------- Custom Properties ---------- */
+:root {
+  --color-bg:        #faf8f4;
+  --color-surface:   #f0ece3;
+  --color-border:    #d9d0c1;
+  --color-text:      #2e2a24;
+  --color-muted:     #7a7060;
+  --color-accent:    #8b5e3c;
+  --color-accent-h:  #6e4a2e;
+  --color-white:     #ffffff;
+  --color-placeholder-bg: #ddd6c8;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --radius:   6px;
+  --shadow:   0 2px 12px rgba(0, 0, 0, 0.08);
+  --max-w:    1100px;
+  --section-gap: 5rem;
+  --transition: 0.25s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent-h);
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+/* ---------- Utilities ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section {
+  padding-block: var(--section-gap);
+}
+
+.placeholder {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.placeholder-notice {
+  margin-top: 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--color-accent-h);
+  border-color: var(--color-accent-h);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.logo:hover,
+.logo:focus-visible {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Nav */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after  { top:  7px; }
+
+/* Open state */
+.nav-toggle[aria-expanded="true"] .hamburger {
+  background-color: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 1.25rem 3rem;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero .tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+}
+
+.hero .hero-sub {
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  max-width: 480px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  min-height: 320px;
+  background-color: var(--color-placeholder-bg);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.15) 10px,
+    rgba(255,255,255,0.15) 20px
+  );
+  flex-shrink: 0;
+}
+
+/* ---------- Om butikken ---------- */
+.om-section {
+  background-color: var(--color-bg);
+}
+
+.om-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.om-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-placeholder-bg);
+  border-radius: var(--radius);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.2) 10px,
+    rgba(255,255,255,0.2) 20px
+  );
+}
+
+.om-text h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.om-text p + p {
+  margin-top: 0.75rem;
+}
+
+/* ---------- Kontakt ---------- */
+.kontakt-section {
+  background-color: var(--color-surface);
+}
+
+.kontakt-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.kontakt-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.info-block h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  margin-bottom: 0.4rem;
+}
+
+.aapningstider {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 320px;
+}
+
+.aapningstider td {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+.aapningstider td:first-child {
+  color: var(--color-muted);
+  padding-left: 0;
+  width: 55%;
+}
+
+.kart-placeholder {
+  width: 100%;
+  min-height: 280px;
+  background-color: var(--color-placeholder-bg);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* ---------- Instagram ---------- */
+.instagram-section {
+  background-color: var(--color-bg);
+  text-align: center;
+}
+
+.instagram-inner h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.instagram-inner > p {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.insta-placeholder {
+  aspect-ratio: 1;
+  background-color: var(--color-placeholder-bg);
+  border-radius: var(--radius);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.15) 10px,
+    rgba(255,255,255,0.15) 20px
+  );
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  padding-block: 2.5rem;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: var(--color-border);
+  font-size: 0.9rem;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS
+   =================================================== */
+
+/* Tablet: 640px+ */
+@media (min-width: 640px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-image-placeholder {
+    min-height: 420px;
+  }
+}
+
+/* Desktop: 900px+ */
+@media (min-width: 900px) {
+  /* Hero: side by side */
+  .hero {
+    flex-direction: row;
+    min-height: 90vh;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding: 6rem 3rem 6rem 1.25rem;
+    max-width: none;
+  }
+
+  .hero-image-placeholder {
+    flex: 1;
+    min-height: unset;
+    width: auto;
+  }
+
+  /* Om: side by side */
+  .om-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Kontakt: side by side */
+  .kontakt-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Instagram: 6 columns */
+  .instagram-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Mobile nav */
+@media (max-width: 639px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 1.25rem;
+    display: none;
+    z-index: 99;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+  }
+}
