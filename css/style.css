@@ -264,6 +264,25 @@ p, li {
   gap: 0.65rem;
 }
 
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  color: var(--purple);
+  border: 1px solid var(--purple);
+  border-radius: 7px;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn-social:hover,
+.btn-social:focus-visible {
+  background: var(--purple-soft);
+}
+
 .ImageTextSection {
   display: grid;
   gap: 1rem;
