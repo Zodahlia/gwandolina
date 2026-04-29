@@ -1,13 +1,15 @@
 /* ===================================================
-   Gwandolina – main.js
+   Gwandolina – shared JS for all pages
    =================================================== */
 
-// ---- Current year in footer ----
-document.getElementById('year').textContent = new Date().getFullYear();
+// Footer year
+document.querySelectorAll('#year').forEach(node => {
+  node.textContent = String(new Date().getFullYear());
+});
 
-// ---- Mobile navigation toggle ----
+// Mobile navigation
 const navToggle = document.querySelector('.nav-toggle');
-const mainNav   = document.getElementById('main-nav');
+const mainNav = document.getElementById('main-nav');
 
 if (navToggle && mainNav) {
   navToggle.addEventListener('click', () => {
@@ -16,7 +18,6 @@ if (navToggle && mainNav) {
     mainNav.classList.toggle('open', !isOpen);
   });
 
-  // Close menu when a nav link is clicked
   mainNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
@@ -24,9 +25,8 @@ if (navToggle && mainNav) {
     });
   });
 
-  // Close menu on Escape key
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mainNav.classList.contains('open')) {
       navToggle.setAttribute('aria-expanded', 'false');
       mainNav.classList.remove('open');
       navToggle.focus();
@@ -34,21 +34,11 @@ if (navToggle && mainNav) {
   });
 }
 
-// ---- Active nav link on scroll ----
-const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.main-nav a[href^="#"]');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        link.classList.toggle(
-          'active',
-          link.getAttribute('href') === `#${entry.target.id}`
-        );
-      });
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
-
-sections.forEach(section => observer.observe(section));
+// Highlight active page in navigation
+const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.main-nav a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentFile) {
+    link.classList.add('active');
+  }
+});

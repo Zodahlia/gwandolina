@@ -1,137 +1,148 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="de-AT">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gwandolina – bruktklærbutikk med klasse. Finn unike plagg og gi klær nytt liv." />
-  <title>Gwandolina – Secondhand but with class!</title>
+  <meta name="description" content="Gwandolina in Lienz: Secondhand Boutique, Kleidersammlung, Jobs und Beratung." />
+  <title>Gwandolina | Secondhand Boutique in Lienz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- ===== HEADER / NAV ===== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#topp" class="logo">Gwandolina</a>
-      <button class="nav-toggle" aria-label="Åpne meny" aria-expanded="false" aria-controls="main-nav">
+      <a href="index.html" class="logo">Gwandolina</a>
+      <button class="nav-toggle" aria-label="Menue offnen" aria-expanded="false" aria-controls="main-nav">
         <span class="hamburger"></span>
       </button>
-      <nav id="main-nav" class="main-nav" aria-label="Hovednavigasjon">
+      <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
         <ul>
-          <li><a href="#topp">Hjem</a></li>
-          <li><a href="#om">Om oss</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="kleidersammlung.html">Kleidersammlung</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-
-    <!-- ===== HERO ===== -->
-    <section id="topp" class="hero">
-      <div class="hero-content">
-        <h1>Gwandolina</h1>
-        <p class="tagline">Secondhand but with class!</p>
-        <p class="hero-sub">Unike plagg med sjel – gi klær nytt liv og finn stilen din hos oss.</p>
-        <a href="#kontakt" class="btn">Finn oss</a>
-      </div>
-      <div class="hero-image-placeholder" aria-hidden="true">
-        <!-- Byttes ut med ekte hero-bilde -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Secondhand Boutique in Lienz</p>
+          <h1>Stilvoll secondhand. Nachhaltig fur alle.</h1>
+          <p class="hero-sub">
+            In unseren Geschaften am Europaplatz findest du ausgesuchte und geprufte
+            Ware in 1a-Zustand - fur die ganze Familie und jeden Anlass.
+          </p>
+          <div class="hero-actions">
+            <a href="boutique.html" class="btn">Zur Boutique</a>
+            <a href="kontakt.html" class="btn btn-outline">Kontakt</a>
+          </div>
+        </div>
+        <div class="placeholder-box" aria-hidden="true">Platz fur Hero-Bild</div>
       </div>
     </section>
 
-    <!-- ===== OM BUTIKKEN ===== -->
-    <section id="om" class="section om-section">
-      <div class="container om-grid">
-        <div class="om-image-placeholder" aria-hidden="true">
-          <!-- Byttes ut med bilde av butikken -->
-        </div>
-        <div class="om-text">
-          <h2>Om Gwandolina</h2>
-          <p>
-            Gwandolina er en liten, hjertelig bruktklærbutikk med et nøye utvalgt sortiment. 
-            Vi tror at bærekraftig mote ikke trenger å gå på bekostning av stil – 
-            tvert imot.
-          </p>
-          <p>
-            Hos oss finner du alt fra hverdagsplagg til spesielle plagg for anledninger. 
-            Hvert plagg er håndplukket og vasket eller renset før det kommer i butikken.
-          </p>
-          <p class="placeholder-notice">
-            <em>— Mer info om butikken legges til her —</em>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== KONTAKT & ÅPNINGSTIDER ===== -->
-    <section id="kontakt" class="section kontakt-section">
+    <section class="section">
       <div class="container">
-        <h2>Kontakt & Åpningstider</h2>
-        <div class="kontakt-grid">
-
-          <div class="kontakt-info">
-            <div class="info-block">
-              <h3>Adresse</h3>
-              <p class="placeholder">— Adresse legges til —</p>
-            </div>
-            <div class="info-block">
-              <h3>Åpningstider</h3>
-              <table class="aapningstider">
-                <tbody>
-                  <tr><td>Mandag – fredag</td><td class="placeholder">— : —</td></tr>
-                  <tr><td>Lørdag</td><td class="placeholder">— : —</td></tr>
-                  <tr><td>Søndag</td><td class="placeholder">Stengt</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="info-block">
-              <h3>Kontakt</h3>
-              <p>E-post: <a href="mailto:hei@gwandolina.no" class="placeholder">— e-post legges til —</a></p>
-              <p>Telefon: <span class="placeholder">— tlf legges til —</span></p>
-            </div>
-          </div>
-
-          <div class="kart-placeholder" aria-label="Kart kommer her">
-            <span>Kart legges til</span>
-          </div>
-
+        <h2 class="section-title">Wofur Gwandolina steht</h2>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Geprufte Qualitat</h3>
+            <p>Nur ausgesuchte Ware kommt in unser vielseitiges Sortiment.</p>
+          </article>
+          <article class="info-card">
+            <h3>Unikate</h3>
+            <p>Viele Artikel sind Einzelstucke - schnell sein lohnt sich.</p>
+          </article>
+          <article class="info-card">
+            <h3>Sozialer Auftrag</h3>
+            <p>Wir verbinden Secondhand mit Beschaftigung, Beratung und Perspektive.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== INSTAGRAM ===== -->
-    <section id="instagram" class="section instagram-section">
-      <div class="container instagram-inner">
-        <h2>Følg oss på Instagram</h2>
-        <p>Se de nyeste plaggene, nyheter og inspirasjon fra butikken.</p>
-        <div class="instagram-grid" aria-label="Placeholder for Instagram-bilder">
-          <div class="insta-placeholder"></div>
-          <div class="insta-placeholder"></div>
-          <div class="insta-placeholder"></div>
-          <div class="insta-placeholder"></div>
-          <div class="insta-placeholder"></div>
-          <div class="insta-placeholder"></div>
-        </div>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-          Se mer på Instagram
-        </a>
+    <section class="section section-soft">
+      <div class="container two-col-list">
+        <article class="list-card">
+          <h2>Offnungszeiten</h2>
+          <table class="aapningstider">
+            <tbody>
+              <tr><td>Montag-Freitag</td><td>09:00-18:00</td></tr>
+              <tr><td>Samstag</td><td>geschlossen</td></tr>
+            </tbody>
+          </table>
+          <p class="small-note">Standort: Europaplatz 2, 9900 Lienz</p>
+        </article>
+
+        <article class="contact-card">
+          <h2>Direkter Kontakt</h2>
+          <p><strong>Gwandolina gem.GmbH</strong></p>
+          <p><a href="tel:+43485273040">+43 4852 73040</a></p>
+          <p><a href="mailto:office@gwandolina.at">office@gwandolina.at</a></p>
+          <p><a href="https://www.gwandolina.at" target="_blank" rel="noopener noreferrer">www.gwandolina.at</a></p>
+        </article>
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Mehr entdecken</h2>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Kleidersammlung</h3>
+            <p>Erfahre, was wir annehmen, was wir nicht annehmen und wie die Abgabe funktioniert.</p>
+            <a href="kleidersammlung.html">Mehr zur Kleidersammlung</a>
+          </article>
+          <article class="info-card">
+            <h3>Jobs & Beratung</h3>
+            <p>Befristete Jobs im Verkauf mit Begleitung, Coaching und Qualifizierung.</p>
+            <a href="jobs.html">Mehr zu Jobs</a>
+          </article>
+          <article class="info-card">
+            <h3>Textile Anderungen</h3>
+            <p>In Kooperation mit MONE bieten wir Anderungen und Naharbeiten aller Art.</p>
+            <a href="https://mone.unterwurzacher.at" target="_blank" rel="noopener noreferrer">Zum Partnerangebot</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container content-narrow centered">
+        <h2 class="section-title">Folge uns auf Instagram</h2>
+        <p>Neu eingetroffene Stucke, Einblicke und Neuigkeiten aus der Boutique.</p>
+        <p><a class="btn btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram offnen</a></p>
+      </div>
+    </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-logo">Gwandolina</p>
-      <p class="footer-tagline">Secondhand but with class!</p>
-      <p class="footer-copy">&copy; <span id="year"></span> Gwandolina. Alle rettigheter forbeholdt.</p>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-logo">Gwandolina</p>
+        <p>Secondhand Boutique in Lienz</p>
+      </div>
+      <div>
+        <p class="footer-heading">Rechtliches</p>
+        <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+      </div>
+      <div>
+        <p class="footer-heading">Kontakt</p>
+        <p><a href="mailto:office@gwandolina.at">office@gwandolina.at</a></p>
+        <p>+43 4852 73040</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Gwandolina gem.GmbH</p>
     </div>
   </footer>
 
