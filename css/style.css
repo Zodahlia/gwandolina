@@ -208,7 +208,7 @@ p, li {
   position: relative;
   min-height: clamp(360px, 58vh, 640px);
   display: grid;
-  align-items: end;
+  align-items: center;
   background: #6F5D8A url("../images/Gwandolina%20PHOTOS/Willkommen%20bei%20Gwandolina.jpg") center / cover no-repeat;
   overflow: hidden;
 }
