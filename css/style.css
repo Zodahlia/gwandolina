@@ -470,6 +470,16 @@ img.team-photo {
   text-decoration: none;
 }
 
+.footer-contact {
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .footer-logos {
   display: grid;
   gap: 0.55rem;
