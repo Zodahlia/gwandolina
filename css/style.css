@@ -466,13 +466,15 @@ img.team-photo {
 
 .footer-grid {
   display: grid;
-  gap: 2rem 2.5rem;              /* [rad-gap kolonne-gap] – mer pusterom */
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem 2.5rem;
+  align-items: center;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;                   /* avstand mellom lenke-paragrafene */
+  gap: 0.5rem;
 }
 
 .footer-links a {
@@ -482,14 +484,12 @@ img.team-photo {
   transition: color 0.2s, text-underline-offset 0.2s;
 }
 
-/* hover: varm lys lilla, høy kontrast på mørk bakgrunn */
 .footer-links a:hover {
   color: var(--purple-soft);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* fokus-ring for tastaturnavigasjon */
 .footer-links a:focus-visible {
   color: var(--purple-soft);
   text-decoration: underline;
@@ -497,6 +497,48 @@ img.team-photo {
   outline: 2px solid var(--purple-soft);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-info p {
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+.footer-info a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-info a:hover {
+  color: var(--purple-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-right img {
+  max-height: 90px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-right {
+    justify-content: center;
+  }
 }
 
 .footer-contact {
