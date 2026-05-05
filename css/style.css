@@ -16,7 +16,7 @@
 
   --font: 'Inter', system-ui, sans-serif;
   --max-width: 1160px;
-  --space: 5rem;
+  --space: 3rem;
   --radius: 10px;
   --shadow: 0 16px 36px rgba(19, 27, 39, 0.08);
 }
