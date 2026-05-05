@@ -224,6 +224,7 @@ p, li {
   position: relative;
   z-index: 1;
   padding-block: clamp(2rem, 6vh, 4rem);
+  text-align: center;
 }
 
 .Hero h1 {
@@ -262,6 +263,7 @@ p, li {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
+  justify-content: center;
 }
 
 .btn-social {
@@ -456,7 +458,7 @@ img.team-photo {
 .site-footer {
   margin-top: 3rem;
   background: var(--footer-bg);
-  color: var(--footer-text);
+  color: #ffffff;
   padding-block: 2rem;
 }
 
@@ -466,7 +468,7 @@ img.team-photo {
 }
 
 .footer-links a {
-  color: var(--footer-text);
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -478,6 +480,27 @@ img.team-photo {
 .footer-contact a {
   color: #ffffff;
   text-decoration: none;
+}
+
+.footer-badges {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-self: end;
+  text-align: right;
+}
+
+.footer-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  font-size: 0.85rem;
+}
+
+.footer-badge-row img {
+  flex-shrink: 0;
 }
 
 .footer-logos {
@@ -539,7 +562,7 @@ img.team-photo {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: start;
   }
 }
