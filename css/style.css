@@ -459,34 +459,80 @@ img.team-photo {
   margin-top: 3rem;
   background: var(--footer-bg);
   color: #ffffff;
-  padding-block: 2rem;
+  padding-block: 3.5rem;         /* mer luft topp og bunn */
+  border-top: 3px solid var(--purple); /* visuell separator mot innhold */
+  font-size: 0.95rem;            /* litt større base i footer */
 }
 
 .footer-grid {
   display: grid;
-  gap: 1.2rem;
+  gap: 2rem 2.5rem;              /* [rad-gap kolonne-gap] – mer pusterom */
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;                   /* avstand mellom lenke-paragrafene */
 }
 
 .footer-links a {
   color: #ffffff;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, text-underline-offset 0.2s;
+}
+
+/* hover: varm lys lilla, høy kontrast på mørk bakgrunn */
+.footer-links a:hover {
+  color: var(--purple-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* fokus-ring for tastaturnavigasjon */
+.footer-links a:focus-visible {
+  color: var(--purple-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  outline: 2px solid var(--purple-soft);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .footer-contact {
   color: #ffffff;
   text-align: center;
+  line-height: 1.8;              /* bedre luftighet mellom linjene */
+  font-size: 0.95rem;
 }
 
 .footer-contact a {
   color: #ffffff;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, text-underline-offset 0.2s;
+}
+
+.footer-contact a:hover {
+  color: var(--purple-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-contact a:focus-visible {
+  color: var(--purple-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  outline: 2px solid var(--purple-soft);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .footer-badges {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;                     /* mer luft mellom badge-radene */
   justify-self: end;
   text-align: right;
 }
@@ -496,7 +542,8 @@ img.team-photo {
   align-items: center;
   gap: 0.5rem;
   justify-content: flex-end;
-  font-size: 0.85rem;
+  font-size: 0.9rem;             /* litt større – 0.85rem var for lite */
+  line-height: 1.5;
 }
 
 .footer-badge-row img {
@@ -564,6 +611,22 @@ img.team-photo {
   .footer-grid {
     grid-template-columns: auto 1fr auto;
     align-items: start;
+  }
+}
+
+/* mobil: venstrejuster badges og kontakt for naturlig leseflyt */
+@media (max-width: 759px) {
+  .footer-badges {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .footer-badge-row {
+    justify-content: flex-start;
+  }
+
+  .footer-contact {
+    text-align: left;
   }
 }
 
